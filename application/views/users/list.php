@@ -18,13 +18,22 @@
             <td>Address</td>
             <td>Action</td>
         </tr>
+        <?php if(!empty($users_data)){
+            $i = 0;
+            foreach($users_data as $val)
+            {
+                $i++;
+         ?>
         <tr>
-            <td>1</td>
-            <td>shiv</td>
-            <td>shiv@gmail.com</td>
-            <td>delhi</td>
+            <td><?php echo $i; ?></td>
+            <td><?php echo $val->name; ?></td>
+            <td><?php echo $val->email; ?></td>
+            <td><?php echo $val->address; ?></td>
             <td><button class="btn-blue">Edit</button><button class="btn-red">Delete</button></td>
         </tr>
+    <?php } }else{ ?>
+        <tr> <td> No records found</td> </tr>
+     <?php }?>
     </table>
 </body>
 </html>
